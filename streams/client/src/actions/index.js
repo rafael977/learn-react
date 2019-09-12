@@ -8,7 +8,6 @@ import {
   DELETE_STREAM
 } from "./types";
 import streamsClient from "../apis/streams";
-import StreamCreate from "../components/streams/StreamCreate";
 
 export const signIn = userId => {
   return {
