@@ -8,6 +8,7 @@ import {
   DELETE_STREAM
 } from "./types";
 import streamsClient from "../apis/streams";
+import history from "../history";
 
 export const signIn = userId => {
   return {
@@ -33,6 +34,8 @@ export const createStream = formValues => {
       type: CREATE_STREAM,
       payload: res.data
     });
+
+    history.push("/");
   };
 };
 
