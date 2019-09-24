@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useResources from "./useResources";
 
 const UserList = ({ resource }) => {
-  const [resources, setResources] = useState([]);
-
-  useEffect(() => {
-    (async resource => {
-      const res = await window.fetch(
-        `https://jsonplaceholder.typicode.com/${resource}`,
-        {
-          method: "GET"
-        }
-      );
-
-      setResources(await res.json());
-    })(resource);
-  }, [resource]);
+  const resources = useResources(resource);
 
   return (
     <ul>
